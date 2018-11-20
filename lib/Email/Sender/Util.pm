@@ -99,3 +99,43 @@ sub easy_transport {
 }
 
 1;
+
+__END__
+
+=pod
+
+=encoding UTF-8
+
+=head1 NAME
+
+Email::Sender::Util - random stuff that makes Email::Sender go
+
+=head1 VERSION
+
+version 1.300031
+
+=head1 METHODS
+
+=head2 easy_transport
+
+  my $transport = Email::Sender::Util->easy_transport($class => \%arg);
+
+This takes the name of a transport class and a set of args to new.  It returns
+an Email::Sender::Transport object of that class.
+
+C<$class> is rewritten to C<Email::Sender::Transport::$class> unless it starts
+with an equals sign (C<=>) or contains a colon.  The equals sign, if present,
+will be removed.
+
+=head1 AUTHOR
+
+Ricardo Signes <rjbs@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2017 by Ricardo Signes.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
